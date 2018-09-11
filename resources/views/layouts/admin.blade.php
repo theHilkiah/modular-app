@@ -22,11 +22,11 @@
         @endheader  --}}
     </header>
     <main id="main" class="main" role="main">
-    @hasSection('layout')
-        @yield('layout')
-    @else
-         @yield('content')
-    @endif
+        @hasSection('layout')
+            @yield('layout')
+        @else
+            @yield('content')
+        @endif
     </main>
     <footer>
         {{--  @footer
