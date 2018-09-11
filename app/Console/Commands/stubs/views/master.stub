@@ -1,0 +1,15 @@
+@extends('layouts.admin')
+@section('head')
+    <title>$STUDLY_NAME$ {{ isset($title)? " :: $title": '' }}</title>
+@endsection
+@section('styles')
+{{-- <link rel="stylesheet" href="{{ mix('css/$LOWER_NAME$.css') }}"> --}}
+@endsection
+@section('layout')
+<div id="$LOWER_NAME$" class="$LOWER_NAME$">
+    @yield('content')
+</div>
+@endsection
+@section('scripts')
+{{-- <script src="{{ mix('js/$LOWER_NAME$.js') }}"></script> --}}
+@endsection
