@@ -63,6 +63,7 @@
                             </div>
                         </div>
                     </form>
+                    {{--  <login-user :action="'{{ route('login') }}'"></login-user>  --}}
                 </div>
             </div>
         </div>
