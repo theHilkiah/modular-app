@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8399e2ca02f5b5eef56d031cacbfc80f",
+    "content-hash": "2e5ab41d30e66fe73691c62831032699",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -533,12 +533,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "dev-master",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:laravel/nova.git",
+                "reference": "5f41e1a9c2422ce4460a5697d55ab1dcfc354054"
+            },
             "dist": {
-                "type": "path",
-                "url": "./nova",
-                "reference": "3f3e9f1b67293b957f5c96da00a8da56f7e263ff",
-                "shasum": null
+                "type": "zip",
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5f41e1a9c2422ce4460a5697d55ab1dcfc354054-zip-b537fe.zip",
+                "reference": "5f41e1a9c2422ce4460a5697d55ab1dcfc354054",
+                "shasum": "201eedd8f05ff691dcc2e0681b5bca47706a8042"
             },
             "require": {
                 "cakephp/chronos": "~1.0",
@@ -592,7 +597,8 @@
             "keywords": [
                 "admin",
                 "laravel"
-            ]
+            ],
+            "time": "2018-09-20T20:37:39+00:00"
         },
         {
             "name": "league/flysystem",

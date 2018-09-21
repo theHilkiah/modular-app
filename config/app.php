@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
+    | Application Name and Logo
     |--------------------------------------------------------------------------
     |
     | This value is the name of your application. This value is used when the
@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'MODULAR APP'),
+    'logo' => env('APP_LOGO', 'https://ha-m.com/img/logo-optimized-v2.svg'),
 
     /*
     |--------------------------------------------------------------------------

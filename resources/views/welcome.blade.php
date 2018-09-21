@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- Styles -->
         <style>
             html, body {
@@ -43,6 +43,9 @@
 
             .content {
                 text-align: center;
+                width: 480px;
+                max-width: 100%;
+                box-shadow: 1px 1px 1rem 1px #cccc;
             }
 
             .title {
@@ -66,7 +69,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            {{--  @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -75,17 +78,51 @@
                         <a href="{{ route('register') }}">Enroll</a>
                     @endauth
                 </div>
-            @endif
+            @endif  --}}
 
-            <div class="content">
-                <div class="title m-b-md">
-                    {{ config('app.name') }}
-                </div>
+            <div class="content m-3" id="app">
 
-                <div class="links">
-                    <a href="/admin">ADMIN</a>
-                </div>
+                @if (auth()->check())
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="title m-b-md">
+                                {{ config('app.name') }}
+                            </div>
+
+                            <div class="links">
+                                <a href="/admin">ADMIN</a>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{{config('app.logo')}}" style="max-height:50px" alt="">
+                                </div>
+                                <div class="col">
+                                <h4 class="card-title my-0">LOGIN</h4>
+                                <small>(Authorized users only)</small>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="card-body">
+                                <login-user :action="'{{ route('login') }}'" :domain="'{{config('mail.domain')}}'"></login-user>
+                            </div>
+                        <div class="card-footer">
+                            <a class="btn btn-link text-black" href="/auth/passwords/reset">
+                                Forgot Your Password?
+                            </a>
+                            <a class="btn btn-link text-black" href="/auth/register">
+                                New or Guest Access?
+                            </a>
+                        </div>
+                    </div>
+                @endif
+
             </div>
         </div>
+        <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

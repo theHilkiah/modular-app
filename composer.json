@@ -21,8 +21,8 @@
         "nwidart/laravel-modules": "^3.3"
     },
     "repositories": [{
-        "type": "path",
-        "url": "./nova"
+        "type": "composer",
+        "url": "https://nova.laravel.com"
     }],
     "autoload": {
         "classmap": [

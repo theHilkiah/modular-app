@@ -1,86 +1,91 @@
 <template>
     <form method="POST" :action="action" @submit.prevent="doLogin">
 
-        <div class="form-group row">
-            <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
-
-            <div class="col-md-6">
-                <input id="email" type="email" :class="[{'is-invalid': errors.email}, 'form-control']" name="email" v-model="email" required autofocus>
+        <fieldset>
+            <div class="form-group">
+                <div :class="[{'is-invalid': errors.email}, 'input-group']">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                    </div>
+                    <input id="email" type="text" name="email" class="form-control" v-model="email" required autofocus>
+                    <!-- <div class="input-group-prepend"><div class="input-group-text">@{{ domain }}</div></div> -->
+                </div>
                 <span v-if="errors.email" class="invalid-feedback" role="alert">
                     <strong>{{ errors.email }}</strong>
                 </span>
             </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-            <div class="col-md-6">
-                <input id="password" type="password" :class="[{'is-invalid': errors.password}, 'form-control']" name="password" v-model="password" required>
-                <span v-if="errors.password" class="invalid-feedback" role="alert">
-                    <strong>{{ errors.password }}</strong>
+            <div class="form-group">
+                <div :class="[{'is-invalid': errors.password}, 'input-group']">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-lock"></i></div>
+                    </div>
+                    <input id="password" type="password" class="form-control" name="password" v-model="password"
+                        required>
+                </div>
+                <span v-if="errors.email" class="invalid-feedback" role="alert">
+                    <strong>{{ errors.email }}</strong>
                 </span>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <div class="col-md-6 offset-md-4">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
-
-                    <label class="form-check-label" for="remember">
-                        remember me
-                    </label>
+            <div class="form-group row mb-0">
+                <div class="col-md-6">
+                    <div class="form-check py-2">
+                        <input class="form-check-input my-1" type="checkbox" name="remember" id="remember">
+                        <label class="form-check-label" for="remember">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-outline-primary btn-block">
+                        Login
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <div class="form-group row mb-0">
-            <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                    Login
-                </button>
-
-                <a class="btn btn-link" href="/auth/passwords/reset">
-                    Forgot Your Password?
-                </a>
-            </div>
-        </div>
+        </fieldset>
     </form>
 </template>
 <script>
-export default {
-    name: "login-user",
-    props: ['action'],
-    data(){
-        return {
-            email: '',
-            password: '',
-            errors: {
-                email: '',
-                password: '',
-                message: ''
+    export default {
+        name: "login-user",
+        props: ["action", "domain"],
+        data() {
+            return {
+                email: "",
+                password: "",
+                errors: {
+                    email: "",
+                    password: "",
+                    message: ""
+                }
+            };
+        },
+        mounted() {},
+        watch: {
+            email(value) {
+                if (value.indexOf('@') == value.length - 1) {
+                    value += this.domain;
+                }
+                return this.value = value;
+            }
+        },
+        methods: {
+            doLogin(form) {
+                let self = this;
+                axios
+                    .post(self.action, {
+                        email: self.email,
+                        password: self.password
+                    })
+                    .then(res => console.log(res.data))
+                    .catch(err => {
+                        self.errors = err.response.data.errors || err;
+                    });
             }
         }
-    },
-    mounted(){
-
-    },
-    methods: {
-        doLogin(form){
-            let self = this, action = this.action, data = {
-                email: this.email, password: this.password
-            };
-            console.log(action, data);
-            axios.post(action, data)
-                .then( res => console.log(res.data))
-                .catch( err => {
-                     let $err = err.response.data;
-                     if($err) self.errors = $err;
-                     self.errors.message = err.response.message || err.message || err;
-                     console.log(err);
-                });
-        }
-    }
-}
+    };
 </script>

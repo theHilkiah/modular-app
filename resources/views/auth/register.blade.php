@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="empno" class="col-md-4 col-form-label text-md-right">{{ __('Employee Number')
+                            <label for="empno" class="col-md-4 col-form-label text-md-right">{{ __('Access Number')
                                 }}</label>
 
                             <div class="col-md-6">
