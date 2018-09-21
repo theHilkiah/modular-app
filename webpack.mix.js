@@ -25,7 +25,7 @@ mix.setPublicPath('public')
 
 /**
  * -----------------------------------------------
- * Bring and mix in all 'module' assets
+ * Bring and mix in all 'admin module' assets
  * -----------------------------------------------
  */
 

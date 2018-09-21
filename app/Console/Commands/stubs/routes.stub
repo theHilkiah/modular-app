@@ -1,6 +1,12 @@
 <?php
 
-Route::group(['middleware' => 'web', 'prefix' => 'admin', 'namespace' => '$MODULE_NAMESPACE$\$STUDLY_NAME$\Http\Controllers'], function()
-{
-    Route::resource('$LOWER_NAME$', $STUDLY_NAME$Controller::class);
-});
+foreach(['my', 'admin'] as $prefix){
+
+    Route::group([
+        'prefix'        => $prefix,
+        'middleware'    => ['web', '$MODULE_NAMESPACE$'],
+        'namespace'     => '$MODULE_NAMESPACE$\$STUDLY_NAME$\Http\Controllers'],
+        function(){
+            Route::resource('$LOWER_NAME$', $STUDLY_NAME$Controller::class);
+        });
+}

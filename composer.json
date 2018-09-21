@@ -20,12 +20,10 @@
         "laravel/tinker": "^1.0",
         "nwidart/laravel-modules": "^3.3"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./nova"
-        }
-    ],
+    "repositories": [{
+        "type": "path",
+        "url": "./nova"
+    }],
     "autoload": {
         "classmap": [
             "database/seeds",
@@ -56,6 +54,9 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-package-update": [
+            "@post-root-package-install"
         ]
     },
     "config": {
