@@ -10471,3 +10471,8 @@ a.text-dark:focus {
   }
 }
 
+.navbar-brand .logo {
+  max-height: 3rem;
+  margin: -1rem 0;
+}
+

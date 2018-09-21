@@ -1,6 +1,8 @@
 <template>
     <form method="POST" :action="action" @submit.prevent="doLogin">
-
+        <div class="alert alert-danger" role="alert" v-if="errors.message">
+            {{errors.message}}
+        </div>
         <fieldset>
             <div class="form-group">
                 <div :class="[{'is-invalid': errors.email}, 'input-group']">
@@ -52,7 +54,7 @@
 <script>
     export default {
         name: "login-user",
-        props: ["action", "domain"],
+        props: ["action", "domain", "_token"],
         data() {
             return {
                 email: "",
@@ -81,9 +83,13 @@
                         email: self.email,
                         password: self.password
                     })
-                    .then(res => console.log(res.data))
+                    .then(res => console.log(res))
                     .catch(err => {
-                        self.errors = err.response.data.errors || err;
+                        console.log(err.response);
+                        self.errors = err.response.data.errors || {};
+                        if(!self.errors.message){
+                            self.errors.message = err.response.statusText;
+                        }
                     });
             }
         }

@@ -16,22 +16,24 @@
 </head>
 
 <body>
-    <header>
-        {{--  @header
-
-        @endheader  --}}
+    <header id="#header" class="bg-primary">
+        <div class="container">
+            @include('_partials.admin.navbar')
+        </div>
     </header>
     <main id="main" class="main" role="main">
-        @hasSection('layout')
-            @yield('layout')
-        @else
-            @yield('content')
-        @endif
+        <div class="container">
+            @hasSection('layout')
+                @yield('layout')
+            @else
+                @yield('content')
+            @endif
+        </div>
     </main>
-    <footer>
-        {{--  @footer
+    <footer id="header" class="bg-primary">
+        <div class="container">
 
-        @endfooter  --}}
+        </div>
     </footer>
     <script src="{{ mix('js/admin.js') }}"></script>
     @yield('scripts')

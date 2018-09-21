@@ -47390,10 +47390,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "login-user",
-    props: ["action", "domain"],
+    props: ["action", "domain", "_token"],
     data: function data() {
         return {
             email: "",
@@ -47422,9 +47424,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 email: self.email,
                 password: self.password
             }).then(function (res) {
-                return console.log(res.data);
+                return console.log(res);
             }).catch(function (err) {
-                self.errors = err.response.data.errors || err;
+                console.log(err.response);
+                self.errors = err.response.data.errors || {};
+                if (!self.errors.message) {
+                    self.errors.message = err.response.statusText;
+                }
             });
         }
     }
@@ -47450,6 +47456,14 @@ var render = function() {
       }
     },
     [
+      _vm.errors.message
+        ? _c(
+            "div",
+            { staticClass: "alert alert-danger", attrs: { role: "alert" } },
+            [_vm._v("\n        " + _vm._s(_vm.errors.message) + "\n    ")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
       _c("fieldset", [
         _c("div", { staticClass: "form-group" }, [
           _c(

@@ -1,16 +1,6 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.base')
 
-        <title>{{ config('app.name') }}</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <!-- Styles -->
+        @section('styles')
         <style>
             html, body {
                 background-color: #fff;
@@ -66,8 +56,8 @@
                 margin-bottom: 30px;
             }
         </style>
-    </head>
-    <body>
+        @endsection
+        @section('content')
         <div class="flex-center position-ref full-height">
             {{--  @if (Route::has('login'))
                 <div class="top-right links">
@@ -108,7 +98,7 @@
                             </div>
                         </div>
                             <div class="card-body">
-                                <login-user :action="'{{ route('login') }}'" :domain="'{{config('mail.domain')}}'"></login-user>
+                                <login-user :_token="'{{csrf_token() }}'" :action="'{{ route('login') }}'" :domain="'{{config('mail.domain')}}'"></login-user>
                             </div>
                         <div class="card-footer">
                             <a class="btn btn-link text-black" href="/auth/passwords/reset">
@@ -123,6 +113,4 @@
 
             </div>
         </div>
-        <script src="{{ mix('js/app.js') }}"></script>
-    </body>
-</html>
+        @endsection
