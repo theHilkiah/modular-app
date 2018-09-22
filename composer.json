@@ -9,7 +9,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/nova": "*",
-        "novam-modules/dashboard"
+        "novam-modules/dashboard": "*",
+        "novam-modules/projects": "*",
+        "novam-modules/personell": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -25,7 +27,7 @@
         "type": "composer",
         "url": "https://nova.laravel.com"
     },{
-        "type": "composer",
+        "type": "vcs",
         "url": "git@github.com:novam-modules/dashboard.git"
     }],
     "autoload": {
@@ -46,6 +48,14 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "installer-types": ["library"],
+        "installer-paths": {
+            "admin/{$name}": [
+                "novam-modules/dashboard",
+                "novam-modules/projects",
+                "novam-modules/personell"
+            ]
         }
     },
     "scripts": {

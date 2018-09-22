@@ -76,7 +76,7 @@ module.exports = __webpack_require__(56);
 /***/ 56:
 /***/ (function(module, exports) {
 
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Websites\\HAM-IPS\\dev-dev\\admin\\Projects\\Resources\\assets\\js\\app.js'");
 
 /***/ })
 
