@@ -72,11 +72,18 @@
                 if (value.indexOf('@') == value.length - 1) {
                     value += this.domain;
                 }
+                this.errors.message = "";
                 return this.value = value;
             },
             errors(errors){
-                errors.email = errors.email.isArray()? errors.email.join('<br/>'): '';
-                errors.password = errors.password.isArray()? errors.password.join('<br/>'): '';
+                console.log(errors);
+                if(errors.email !== undefined){
+                    errors.email = errors.email.isArray()? errors.email.join('<br/>'): errors.email;
+                }
+                if(errors.password !== undefined){
+                    errors.password = errors.password.isArray()? errors.password.join('<br/>'): errors.password;
+                }
+                return errors;
             }
         },
         methods: {
