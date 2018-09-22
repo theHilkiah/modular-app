@@ -47257,8 +47257,7 @@ module.exports = function normalizeComponent (
 __webpack_require__(39);
 __webpack_require__(46);
 __webpack_require__(47);
-__webpack_require__(48);
-module.exports = __webpack_require__(49);
+module.exports = __webpack_require__(48);
 
 
 /***/ }),
@@ -47416,11 +47415,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (value.indexOf('@') == value.length - 1) {
                 value += this.domain;
             }
+            this.errors.message = "";
             return this.value = value;
         },
         errors: function errors(_errors) {
-            _errors.email = _errors.email.isArray() ? _errors.email.join('<br/>') : '';
-            _errors.password = _errors.password.isArray() ? _errors.password.join('<br/>') : '';
+            console.log(_errors);
+            if (_errors.email !== undefined) {
+                _errors.email = _errors.email.isArray() ? _errors.email.join('<br/>') : _errors.email;
+            }
+            if (_errors.password !== undefined) {
+                _errors.password = _errors.password.isArray() ? _errors.password.join('<br/>') : _errors.password;
+            }
+            return _errors;
         }
     },
     methods: {
@@ -47771,12 +47777,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Websites\\HAM-IPS\\dev-dev\\admin\\Projects\\Resources\\assets\\sass\\app.scss'\n    at runLoaders (C:\\Websites\\HAM-IPS\\dev-dev\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Websites\\HAM-IPS\\dev-dev\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Websites\\HAM-IPS\\dev-dev\\node_modules\\loader-runner\\lib\\LoaderRunner.js:200:19\n    at C:\\Websites\\HAM-IPS\\dev-dev\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:70:14\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)");
 
 /***/ })
 /******/ ]);
