@@ -73,6 +73,10 @@
                     value += this.domain;
                 }
                 return this.value = value;
+            },
+            errors(errors){
+                errors.email = errors.email.isArray()? errors.email.join('<br/>'): '';
+                errors.password = errors.password.isArray()? errors.password.join('<br/>'): '';
             }
         },
         methods: {
@@ -83,12 +87,13 @@
                         email: self.email,
                         password: self.password
                     })
-                    .then(res => console.log(res))
+                    .then(res => window.location.reload() )
                     .catch(err => {
                         console.log(err.response);
-                        self.errors = err.response.data.errors || {};
+                        let errors = err.response.data;
+                        self.errors = errors.errors || {};
                         if(!self.errors.message){
-                            self.errors.message = err.response.statusText;
+                            self.errors.message = errors.message;
                         }
                     });
             }

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header id="#header" class="bg-primary">
+    <header id="header" class="bg-primary">
         <div class="container">
             @include('_partials.admin.navbar')
         </div>
@@ -30,7 +30,7 @@
             @endif
         </div>
     </main>
-    <footer id="header" class="bg-primary">
+    <footer id="footer" class="bg-primary py-3">
         <div class="container">
 
         </div>

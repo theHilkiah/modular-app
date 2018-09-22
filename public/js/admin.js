@@ -47184,6 +47184,31 @@ window.Vue = __webpack_require__(34);
 // const app = new Vue({
 //     el: '#app'
 // });
+__webpack_require__(55);
+
+/***/ }),
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */
+/***/ (function(module, exports) {
+
+(function ($) {
+    $(function () {
+        var adjustMainSection = function adjustMainSection() {
+            $('#main,[role="main"]', document).css('min-height', function () {
+                var headerHgt = $('#header', document).outerHeight(true);
+                var footerHgt = $('#footer', document).outerHeight(true);
+                return window.innerHeight - footerHgt - headerHgt;
+            });
+        };
+
+        $(document).ready(adjustMainSection);
+        $(window).on('load resize', adjustMainSection);
+    });
+})(jQuery);
 
 /***/ })
 /******/ ]);

@@ -47415,6 +47415,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 value += this.domain;
             }
             return this.value = value;
+        },
+        errors: function errors(_errors) {
+            _errors.email = _errors.email.isArray() ? _errors.email.join('<br/>') : '';
+            _errors.password = _errors.password.isArray() ? _errors.password.join('<br/>') : '';
         }
     },
     methods: {
@@ -47424,12 +47428,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 email: self.email,
                 password: self.password
             }).then(function (res) {
-                return console.log(res);
+                return window.location.reload();
             }).catch(function (err) {
                 console.log(err.response);
-                self.errors = err.response.data.errors || {};
+                var errors = err.response.data;
+                self.errors = errors.errors || {};
                 if (!self.errors.message) {
-                    self.errors.message = err.response.statusText;
+                    self.errors.message = errors.message;
                 }
             });
         }
