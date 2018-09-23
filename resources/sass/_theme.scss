@@ -37,3 +37,9 @@
     color: rgba(255, 255, 255, 0.3);
 }
 
+[class*="primary active"]:not(.disabled,[disabled]),
+[class*="primary"]:hover{
+    background-color: $white!important;
+    color:$black!important;
+}
+

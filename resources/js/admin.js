@@ -19,4 +19,5 @@ window.Vue = require('vue');
 // const app = new Vue({
 //     el: '#app'
 // });
+// require('./sidenav.js');
 require('./admin.scripts.js');

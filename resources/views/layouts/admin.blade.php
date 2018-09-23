@@ -21,6 +21,7 @@
             @include('_partials.admin.navbar')
         </div>
     </header>
+    {{--  @include('_partials.admin.sidenav')  --}}
     <main id="main" class="main" role="main">
         <div class="container">
             @hasSection('layout')

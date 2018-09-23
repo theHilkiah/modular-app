@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-0">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/admin">
         <img src="{{ config('app.logo') }}" class="logo" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
