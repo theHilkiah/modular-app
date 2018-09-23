@@ -1,8 +1,12 @@
 {
+    "/js/calendar.js": "/js/calendar.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
+    "/css/calendar.css": "/css/calendar.css",
     "/css/dashboard.css": "/css/dashboard.css",
+    "/css/projects.css": "/css/projects.css",
     "/js/admin.js": "/js/admin.js",
+    "/js/projects.js": "/js/projects.js",
     "/js/dashboard.js": "/js/dashboard.js"
 }

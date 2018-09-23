@@ -11,12 +11,21 @@
     },
     "devDependencies": {
         "axios": "^0.18",
-        "bootstrap": "^4.0.0",
+        "babel-preset-stage-2": "^6.24.1",
+        "bootstrap": "^4.1.1",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
-        "lodash": "^4.17.5",
+        "lodash": "^4.17.11",
         "popper.js": "^1.12",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "compass": "^0.1.1",
+        "datatables": "^1.10.18",
+        "datatables.net": "^1.10.19",
+        "fullcalendar": "^3.9.0",
+        "vue-full-calendar": "^2.6.1",
+        "vuedraggable": "^2.16.0"
     }
 }
