@@ -6,6 +6,13 @@
 /.idea
 /.vscode
 /.vagrant
+
+/public/js/
+/public/css/
+/public/images
+/public/nova*
+/public/vendor
+
 Homestead.json
 Homestead.yaml
 npm-debug.log

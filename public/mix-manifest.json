@@ -5,8 +5,10 @@
     "/css/admin.css": "/css/admin.css",
     "/css/calendar.css": "/css/calendar.css",
     "/css/dashboard.css": "/css/dashboard.css",
+    "/css/personell.css": "/css/personell.css",
     "/css/projects.css": "/css/projects.css",
     "/js/admin.js": "/js/admin.js",
     "/js/projects.js": "/js/projects.js",
+    "/js/personell.js": "/js/personell.js",
     "/js/dashboard.js": "/js/dashboard.js"
 }

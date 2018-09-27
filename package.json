@@ -22,8 +22,9 @@
     },
     "dependencies": {
         "compass": "^0.1.1",
-        "datatables": "^1.10.18",
         "datatables.net": "^1.10.19",
+        "datatables.net-bs4": "^1.10.19",
+        "datatables.net-dt": "^1.10.19",
         "fullcalendar": "^3.9.0",
         "vue-full-calendar": "^2.6.1",
         "vuedraggable": "^2.16.0"
