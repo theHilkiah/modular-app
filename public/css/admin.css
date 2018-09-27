@@ -10514,8 +10514,8 @@ a.text-dark:focus {
   color: rgba(255, 255, 255, 0.3);
 }
 
-[class*="primary active"]:not(.disabled):not([disabled]),
-[class*="primary"]:hover {
+[class*="btn-primary active"]:not(.disabled):not([disabled]),
+[class*="btn-primary"]:hover {
   background-color: #fff !important;
   color: #000 !important;
 }
