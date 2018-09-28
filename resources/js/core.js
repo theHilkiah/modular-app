@@ -45,7 +45,11 @@ if (token) {
 
 window.Vue = require('vue');
 
-Vue.config.devtools = window.location.hostname == 'localhost';
+Vue.config.devtools = true; //window.location.hostname == 'localhost';
+
+// const App = new Vue({
+//     el: "#main"
+// });
 
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

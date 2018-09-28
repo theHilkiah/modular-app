@@ -7,7 +7,9 @@
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/personell.css": "/css/personell.css",
     "/css/projects.css": "/css/projects.css",
+    "/css/timetrack.css": "/css/timetrack.css",
     "/js/admin.js": "/js/admin.js",
+    "/js/timetrack.js": "/js/timetrack.js",
     "/js/projects.js": "/js/projects.js",
     "/js/personell.js": "/js/personell.js",
     "/js/dashboard.js": "/js/dashboard.js"
