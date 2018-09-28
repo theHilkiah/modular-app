@@ -13,7 +13,7 @@ require('./core');
  */
 
 Vue.component('LoginUser', require('../components/Auth/LoginUser.vue'));
-Vue.component('example-component', require('../components/ExampleComponent.vue'));
+Vue.component('EnrollUser', require('../components/Auth/EnrollUser.vue'));
 
 const app = new Vue({
     el: '#app'

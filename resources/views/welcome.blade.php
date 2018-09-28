@@ -98,15 +98,26 @@
                             </div>
                         </div>
                             <div class="card-body">
-                                <login-user :_token="'{{csrf_token() }}'" :action="'{{ route('login') }}'" :domain="'{{config('mail.domain')}}'"></login-user>
+                                <div class="enroll-user collapse">
+                                        <enroll-user :_token="'{{csrf_token() }}'" :action="'{{ route('login') }}'" :domain="'{{config('mail.domain')}}'"></enroll-user>
+                                        <hr class="row">
+                                        <a class="btn btn-sm btn-outline-primary text-black" href="#" onclick="$('.enroll-user').hide();$('.login-user').slideDown();">
+                                                Enrolled? Login Here
+                                            </a>
+                                </div>
+                                <div class="login-user collapse show">
+                                    <login-user :_token="'{{csrf_token() }}'" :action="'{{ route('login') }}'" :domain="'{{config('mail.domain')}}'"></login-user>
+                                    <hr class="row">
+                                    <a class="btn btn-sm btn-outline-primary text-black" href="#" onclick="$('.login-user').hide();$('.enroll-user').slideDown();">
+                                            New or Guest Access?
+                                        </a>
+                                </div>
                             </div>
                         <div class="card-footer">
                             <a class="btn btn-link text-black" href="/auth/passwords/reset">
                                 Forgot Your Password?
                             </a>
-                            <a class="btn btn-link text-black" href="/auth/register">
-                                New or Guest Access?
-                            </a>
+
                         </div>
                     </div>
                 @endif
