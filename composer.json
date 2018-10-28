@@ -30,7 +30,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Admin\\": "admin/"
+            "Admin\\": "admin/",
+            "Modules\\": "modules/"
         }
     },
     "autoload-dev": {
@@ -58,12 +59,11 @@
         ],
         "post-install-cmd": [
             "@php -r \"file_exists('admin') || mkdir('admin');\"",
-            "@php -r \"shell_exec('git clone git@github.com:novam-modules/calendar.git admin/calendar');\"",
-            "@php -r \"shell_exec('git clone git@github.com:novam-modules/dashboard.git admin/dashboard');\"",
-            "@php -r \"shell_exec('git clone git@github.com:novam-modules/personell.git admin/personell');\"",
-            "@php -r \"shell_exec('git clone git@github.com:novam-modules/projects.git admin/projects');\"",
-            "@php -r \"shell_exec('git clone git@github.com:novam-modules/timetrack.git admin/timetrack');\""
-
+            "@php -r \"shell_exec('git clone git@github.com:novam-modules/calendar.git modules/calendar');\"",
+            "@php -r \"shell_exec('git clone git@github.com:novam-modules/dashboard.git modules/dashboard');\"",
+            "@php -r \"shell_exec('git clone git@github.com:novam-modules/personell.git modules/personell');\"",
+            "@php -r \"shell_exec('git clone git@github.com:novam-modules/projects.git modules/projects');\"",
+            "@php -r \"shell_exec('git clone git@github.com:novam-modules/timetrack.git modules/timetrack');\""
         ],
         "post-update-cmd": [
             "@post-root-package-install"
